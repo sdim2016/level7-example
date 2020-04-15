@@ -32,6 +32,8 @@ class QuizFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        tvQuestion.text = viewModel.question
+
         btnConfirmAnswer.setOnClickListener {
             if (viewModel.isAnswerCorrect(etAnswer.text.toString())) {
                 Toast.makeText(context, "Your answer is correct!", Toast.LENGTH_SHORT).show()
